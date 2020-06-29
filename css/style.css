@@ -1,0 +1,15 @@
+*{
+	box-sizing:border-box;
+}
+body{
+  font: 1.3em sans-serif;
+}
+
+
+.itemChecked {
+  text-decoration: line-through;
+  background-color: gray;
+}
+.thisItem {
+  background-color: brown;
+}

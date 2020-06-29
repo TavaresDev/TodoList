@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Andre TodoList</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='js/script.js' async></script>
+</head>
+
+<body>
+	<header>
+		<div class="container mt-4" >
+			<!-- <p>Andre TodoList, maybe a Pomodoro timer in the future .-.</p> -->
+		</div>
+	</header>
+	<main>
+		<div  class="container m-4 text-center" >
+			<H1>Todo List</H1>
+		</div>
+		<section>
+
+		<div class="container">
+
+			<div class="form-group d-flex mx-3">
+                <!-- <label for="name">Name</label> -->
+                <input type="text" id="todoInput" class="form-control mx-3" placeholder="Item Name">
+				<div class="input-group-default">
+					<button id="todoBtn" type="submit" class="btn btn-primary"> Add</button>
+				
+				</div>
+		
+            </div>
+			
+
+			<!-- Todo List -->
+			<div class="w-75 mx-auto"> 
+				<ul id="todoList" class=" list-group">
+					
+				</ul>
+
+			</div>
+		</div>
+		</section>
+	<audio id="soundBell" src="sound/ride.wav"></audio>
+	</main>
+	<footer>
+	<div class="container text-center m-4">
+		<p>Developed By 
+			<a href="https://www.andretavares.dev/" target="_blank" rel="noopener noreferrer">
+				Andre Tavares
+			</a>
+		</p>
+	
+	</div>
+	</footer>
+
+</body>
+
+</html>
