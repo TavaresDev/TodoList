@@ -1,30 +1,21 @@
-// I would love feedback on best practices, I didnt follow any tutorial and I fellt the cody is messy
+// I didn't follow any tutorial and spent some time trying to organize the code, but still looks messy
+// Was trying to make small functions to separate concerns and be readable.
+// Im using bootstrap 4 just for lil better visual and responsiveness .
+// I would love feedback and best practices tips.
+
+// Declaration
+const todoBtn = document.getElementById('todoBtn');
+const todoList = document.getElementById('todoList');
 
 
-let todoBtn = document.getElementById('todoBtn');
+// Events 
 todoBtn.addEventListener('click', addTodo);
-
-function testBtnDelete() {
-    // works to delete item
-    // but nee to be called after create the items
-    let arrayDeleteBtn = document.querySelectorAll(".itemDeleteBtn");
-    console.log(arrayDeleteBtn);
-    arrayDeleteBtn.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.target.parentElement.remove();
-            // console.log("boo");
-        });
-    });
-
-}
+todoList.addEventListener('change', checkItem);
 
 
-// let listOfItens = document.querySelectorAll('.itemClass');
-// const itemCheck = document.querySelector('#todoList');
-
-todoList.addEventListener('change', (event) => {
-    // not ideal,refactor later
-    // let itemText = event.target.nextElementSibling;
+// Functions
+function checkItem() {
+    // weird but works
     let itemCheck = event.target.parentElement;
     itemCheck.classList.toggle("itemChecked");
     // change order of the list, I would think about using CSS flexbox to it. is it bad practice?
@@ -32,12 +23,11 @@ todoList.addEventListener('change', (event) => {
 
     let list = itemCheck.parentElement;
     list.append(itemCheck);
-    //'works' but looks weird to me lol 
+    //'works' but looks weird 
     // maybe change to an array and then change the order
-
     playSound();
-
-});
+    
+}
 
 function addTodo() {
     let todoInput = document.getElementById('todoInput');
@@ -66,13 +56,11 @@ function createTodoItem(todoValue) {
     let itemInput = document.createElement('input');
     // add type
     itemInput.type = 'checkbox';
-    // itemInput.classList.add("form-check-input");
 
     // create button
     let itemBtn = document.createElement('button');
     itemBtn.innerText = 'Delete';
     itemBtn.classList.add("itemDeleteBtn", "btn", "btn-danger", "btn-sm");
-
 
     // append to the list Item
     todoItem.appendChild(itemInput);
@@ -84,8 +72,24 @@ function createTodoItem(todoValue) {
     // console.log(todoList);
 }
 
+function testBtnDelete() {
+    // works to delete item
+    // but nee to be called after create the items
+    let arrayDeleteBtn = document.querySelectorAll(".itemDeleteBtn");
+    console.log(arrayDeleteBtn);
+    arrayDeleteBtn.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.target.parentElement.remove();
+            // console.log("boo");
+        });
+    });
+}
+
 function playSound() {
     const audio = document.getElementById('soundBell');
-    audio.currentTime = 0; // set the audio to star from begin
+    // set the audio to star from begin
+    audio.currentTime = 0; 
     audio.play();
 }
+
+
