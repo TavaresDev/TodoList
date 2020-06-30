@@ -1,3 +1,5 @@
 # TodoList
 
-https://github.com/TavaresDev/TodoList.git
+
+## https://tavaresdev.github.io/TodoList/
+
