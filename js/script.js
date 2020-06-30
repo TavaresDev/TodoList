@@ -39,7 +39,7 @@
         //'works' but looks weird to me lol 
         // maybe change to an array and then change the order
 
-        playSound ()
+        playSound();
 
         });
 
